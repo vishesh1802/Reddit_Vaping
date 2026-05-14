@@ -14,8 +14,7 @@ STEP 3: Apply decision rules
 - If already quitting AND vape-free for 3+ months (look for: "months", "long time", "since [month/year]", "6 months", "year") → MAINTENANCE
 - If NOT already quitting AND has concrete plan → PREPARATION
 - If NOT already quitting AND no concrete plan → CONTEMPLATION
-- If person does NOT see vaping as a problem, is not thinking about quitting, or shows no intention to change → PRECONTEMPLATION
-
+  
 IMPORTANT DISTINCTIONS:
 - CONTEMPLATION vs PREPARATION:
   * CONTEMPLATION: "thinking about", "considering", "maybe", "not sure", "wondering"
@@ -29,9 +28,6 @@ IMPORTANT DISTINCTIONS:
   * ACTION: Recent timeframe ("days", "weeks", "just", "recently", "2 months")
   * MAINTENANCE: Extended timeframe ("3+ months", "long time", "since [date]", "half a year")
   
-- PRECONTEMPLATION vs CONTEMPLATION:
-  * PRECONTEMPLATION: Explicit denial ("don't see problem", "not bad", "no intention", "not thinking about it")
-  * CONTEMPLATION: Any awareness of problem, even if uncertain
 
 EXAMPLES:
 
@@ -55,10 +51,7 @@ Post: "6 months vape-free! Still get cravings sometimes but staying strong. Neve
 Decision: Already quitting (YES) → Multiple months (3+) → MAINTENANCE
 Evidence: "6 months vape-free", "still get cravings"
 
-Example 5 (PRECONTEMPLATION):
-Post: "I don't see what's wrong with vaping. It's not that bad compared to smoking. I'm fine with it."
-Decision: No intention to change, explicit denial → PRECONTEMPLATION
-Evidence: "don't see what's wrong", "not that bad", "fine with it"
+
 
 Post to classify:
 {post_text}
@@ -66,6 +59,6 @@ Post to classify:
 Return ONLY valid JSON (no markdown, no extra text) with exactly these keys:
 - "is_already_quitting": boolean (true if user has started quitting or is maintaining)
 - "has_concrete_plan": boolean (true if user has specific plans/strategies, only relevant if not already quitting)
-- "stage": one of ["PRECONTEMPLATION","CONTEMPLATION","PREPARATION","ACTION","MAINTENANCE"]
+- "stage": one of ["CONTEMPLATION","PREPARATION","ACTION","MAINTENANCE"]
 - "explanation": a brief one-sentence justification for why this stage was chosen
 - "evidence": an array of up to 2 short quoted snippets from the post that support this stage classification
